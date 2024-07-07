@@ -2,26 +2,23 @@ package main
 
 import (
 	"fmt"
-	"github.com/sam-caldwell/monorepo/go/exit"
-	calculateSubnets "github.com/sam-caldwell/monorepo/go/net/subnetting/calculate-subnets"
 	"os"
 	"strconv"
 )
 
 func main() {
-	exit.IfVersionRequested()
 	if len(os.Args) < 3 {
-		fmt.Println(calculateSubnets.ErrMissingArguments)
-		os.Exit(calculateSubnets.ExitMissingArgs)
+		fmt.Println(ErrMissingArguments)
+		os.Exit(ExitMissingArgs)
 	}
-	parentCIDR := os.Args[calculateSubnets.ArgParentCIDR]
+	parentCIDR := os.Args[ArgParentCIDR]
 	subnetSize := func() int {
 		var err error
 		var n int64
-		s := os.Args[calculateSubnets.ArgSubnetSize]
+		s := os.Args[ArgSubnetSize]
 		if n, err = strconv.ParseInt(s, 10, 32); err != nil {
 			fmt.Println(err)
-			os.Exit(calculateSubnets.ExitSubnettingError)
+			os.Exit(ExitSubnettingError)
 		}
 		return int(n)
 	}()
@@ -32,17 +29,17 @@ func main() {
 		resultCount = func() int {
 			var err error
 			var n int64
-			s := os.Args[calculateSubnets.ArgResultCount]
+			s := os.Args[ArgResultCount]
 			if n, err = strconv.ParseInt(s, 10, 32); err != nil {
-				fmt.Println(calculateSubnets.ErrInvalidResultCount)
-				os.Exit(calculateSubnets.ExitInvalidResultCount)
+				fmt.Println(ErrInvalidResultCount)
+				os.Exit(ExitInvalidResultCount)
 			}
 			return int(n)
 		}()
 	}
 
-	if subnets, err := calculateSubnets.CalculateSubnets(parentCIDR, subnetSize); err != nil {
-		fmt.Printf(calculateSubnets.ErrGeneral, err)
+	if subnets, err := CalculateSubnets(parentCIDR, subnetSize); err != nil {
+		fmt.Printf(ErrGeneral, err)
 	} else {
 		if resultCount == 0 {
 			resultCount = len(subnets)
@@ -51,5 +48,5 @@ func main() {
 			fmt.Printf("%s", network)
 		}
 	}
-	os.Exit(calculateSubnets.ExitSuccess)
+	os.Exit(ExitSuccess)
 }
