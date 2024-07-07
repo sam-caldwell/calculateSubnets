@@ -2,50 +2,47 @@ package main
 
 import (
 	"github.com/sam-caldwell/ansi"
+	"github.com/sam-caldwell/arg"
 	"github.com/sam-caldwell/calculateSubnets"
 	"github.com/sam-caldwell/errors"
 	"github.com/sam-caldwell/exit"
-	"os"
-	"strconv"
 )
 
 func main() {
-	if len(os.Args) < 3 {
-		ansi.Red().Println(errors.MissingArguments).Reset().Fatal(exit.MissingArg)
-	}
-	parentCIDR := os.Args[calculateSubnets.ArgParentCIDR]
-	subnetSize := func() int {
-		var err error
-		var n int64
-		s := os.Args[calculateSubnets.ArgSubnetSize]
-		if n, err = strconv.ParseInt(s, 10, 32); err != nil {
-			ansi.Red().Println(err.Error()).Fatal(exit.ParseError).Reset()
-		}
-		return int(n)
-	}()
 
-	//Optional result count
-	resultCount := 0
-	if len(os.Args) == 4 {
-		resultCount = func() int {
-			var err error
-			var n int64
-			s := os.Args[calculateSubnets.ArgResultCount]
-			if n, err = strconv.ParseInt(s, 10, 32); err != nil {
-				ansi.Red().Println(errors.InvalidResultCount).Fatal(exit.InvalidResult).Reset()
-			}
-			return int(n)
-		}()
+	var err error
+	var parent *arg.Cidr
+	var size *arg.Uint
+	var subnets []string
+
+	parent, err = arg.NewCidr("cidr", "10.1.0.0/16", "define the parent CIDR within which subnets must exist.")
+	if err != nil {
+		ansi.Red().Println(err.Error()).Fatal(exit.InvalidInput).Reset()
 	}
 
-	if subnets, err := calculateSubnets.CalculateSubnets(parentCIDR, subnetSize); err != nil {
+	size, err = arg.NewUint("size", 24, 0, 32, "define the subnet size (in bits)")
+	if err != nil {
+		ansi.Red().Println(err.Error()).Fatal(exit.InvalidInput).Reset()
+	}
+
+	arg.Parse()
+
+	if err = parent.Verify(); err != nil {
+		ansi.Red().Printf(errors.InvalidInput+errors.Details, err).LF().Fatal(exit.InvalidInput).Reset()
+	}
+
+	if err = size.Verify(); err != nil {
+		ansi.Red().Printf(errors.InvalidInput+errors.Details, err).LF().Fatal(exit.InvalidInput).Reset()
+	}
+
+	if *size.Value() > 32 {
+		ansi.Red().Printf(errors.InvalidSubnetSize+errors.Details, *size.Value())
+	}
+
+	if subnets, err = calculateSubnets.Calculate(*parent.Value(), uint8(*size.Value())); err != nil {
 		ansi.Red().Println(err.Error()).Fatal(exit.GeneralError).Reset()
-	} else {
-		if resultCount == 0 {
-			resultCount = len(subnets)
-		}
-		for _, network := range subnets[:resultCount] {
-			ansi.Printf("%s", network)
-		}
+	}
+	for _, network := range subnets {
+		ansi.Printf("%s\n", network)
 	}
 }

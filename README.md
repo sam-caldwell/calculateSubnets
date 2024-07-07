@@ -7,7 +7,7 @@ This command will calculate a list of subnet networks within the parent CIDR blo
 
 ## Commands
 
-**Syntax:** `calculateSubnet ${parentCIDR} ${subnetSize}`
+**Syntax:** `calculateSubnet -cidr ${parentCIDR} -size ${subnetSize}`
 
 * parentCidr = CIDR string (e.g. 10.11.0.0/16)
 * subnetSize = size of the subnet (e.g. integer 0-32)
