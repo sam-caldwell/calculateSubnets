@@ -1,4 +1,4 @@
-package main
+package calculateSubnets
 
 import (
 	"fmt"
@@ -7,9 +7,8 @@ import (
 
 // CalculateSubnets calculates subnets based on a parentCIDR and subnetSize
 func CalculateSubnets(parentCIDR string, subnetSize int) (subnets []string, err error) {
-
-	_, ipNet, err := net.ParseCIDR(parentCIDR)
-	if err != nil {
+	var ipNet *net.IPNet
+	if _, ipNet, err = net.ParseCIDR(parentCIDR); err != nil {
 		return nil, fmt.Errorf(ErrInvalidParentCIDR, err)
 	}
 
