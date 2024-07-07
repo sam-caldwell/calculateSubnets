@@ -10,12 +10,6 @@ const (
 	//ArgResultCount - cli Argument position
 	ArgResultCount = 3
 
-	// ErrInvalidParentCIDR - standard error
-	ErrInvalidParentCIDR = "invalid parent CIDR:%s"
-
-	// ErrInvalidSubnetSize - standard error
-	ErrInvalidSubnetSize = "invalid subnet size:%d"
-
 	//MsgIpv4CIDR - standard CIDR format string
 	MsgIpv4CIDR = "%d.%d.%d.%d/%d\n"
 )

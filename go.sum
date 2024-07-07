@@ -1,6 +1,6 @@
 github.com/sam-caldwell/ansi v1.0.0 h1:eIcaSowSIDGy+sa8In6RWx/Mde99Lpt0EUxt7W1wcsg=
 github.com/sam-caldwell/ansi v1.0.0/go.mod h1:6Ac8q82OJXXFNOxV2yz+D8G8TbaMxaBAgZq1Z2PLaaI=
-github.com/sam-caldwell/errors v1.0.2 h1:+FVvzG7lq+V7bbXf4XHnl625mKHCeoVsIY1BKmdSrp4=
-github.com/sam-caldwell/errors v1.0.2/go.mod h1:lZIVGM3grlaHjtZziLfGruJvF1cP+QTERP5ZavehpX0=
-github.com/sam-caldwell/exit v1.0.0 h1:zqVdK1Pdpww1RRTzwOAq1OMDwLLUUd94T2gqQF2kpHc=
-github.com/sam-caldwell/exit v1.0.0/go.mod h1:gy6m0KCj1RZ+KafgZVahgAxdwVm9pud/6O+lZz0NpFw=
+github.com/sam-caldwell/errors v1.0.3 h1:l49R7noX3rlAH+USsoFbT0Om26GGlyIeTFJxkK+On8Q=
+github.com/sam-caldwell/errors v1.0.3/go.mod h1:lZIVGM3grlaHjtZziLfGruJvF1cP+QTERP5ZavehpX0=
+github.com/sam-caldwell/exit v1.0.2 h1:9OSz8+9KE9cqQIQcex2+Egd91LGclfn4RKLr2CU7vmo=
+github.com/sam-caldwell/exit v1.0.2/go.mod h1:gy6m0KCj1RZ+KafgZVahgAxdwVm9pud/6O+lZz0NpFw=

@@ -32,7 +32,7 @@ func main() {
 			var n int64
 			s := os.Args[calculateSubnets.ArgResultCount]
 			if n, err = strconv.ParseInt(s, 10, 32); err != nil {
-				ansi.Red().Println(errors.ErrInvalidResultCount).Fatal(exit.InvalidResult).Reset()
+				ansi.Red().Println(errors.InvalidResultCount).Fatal(exit.InvalidResult).Reset()
 			}
 			return int(n)
 		}()

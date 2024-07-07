@@ -2,6 +2,7 @@ package calculateSubnets
 
 import (
 	"fmt"
+	"github.com/sam-caldwell/errors"
 	"net"
 )
 
@@ -9,12 +10,12 @@ import (
 func CalculateSubnets(parentCIDR string, subnetSize int) (subnets []string, err error) {
 	var ipNet *net.IPNet
 	if _, ipNet, err = net.ParseCIDR(parentCIDR); err != nil {
-		return nil, fmt.Errorf(ErrInvalidParentCIDR, err)
+		return nil, fmt.Errorf(errors.InvalidParentCidr+errors.Details, err)
 	}
 
 	ones, _ := ipNet.Mask.Size()
 	if subnetSize > 32 || subnetSize < ones {
-		return nil, fmt.Errorf(ErrInvalidSubnetSize, subnetSize)
+		return nil, fmt.Errorf(errors.InvalidSubnetSize+errors.Details, subnetSize)
 	}
 
 	// Extract the first IP address within the parent CIDR
