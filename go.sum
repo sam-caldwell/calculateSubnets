@@ -4,8 +4,8 @@ github.com/sam-caldwell/ansi v1.0.0 h1:eIcaSowSIDGy+sa8In6RWx/Mde99Lpt0EUxt7W1wc
 github.com/sam-caldwell/ansi v1.0.0/go.mod h1:6Ac8q82OJXXFNOxV2yz+D8G8TbaMxaBAgZq1Z2PLaaI=
 github.com/sam-caldwell/arg v1.2.0 h1:nAlOdMUJ+qbtxk5fbuMQ7sRa5Q54aRlHEO1CbkXm8G0=
 github.com/sam-caldwell/arg v1.2.0/go.mod h1:i/nKpj4jlSU8g5gzALg/FJO54OGj2CADClTD1Blv1kA=
-github.com/sam-caldwell/errors v1.0.3 h1:l49R7noX3rlAH+USsoFbT0Om26GGlyIeTFJxkK+On8Q=
-github.com/sam-caldwell/errors v1.0.3/go.mod h1:lZIVGM3grlaHjtZziLfGruJvF1cP+QTERP5ZavehpX0=
+github.com/sam-caldwell/errors v1.0.6 h1:MCV8zJ2AciyvWh/AZU002YjaQQarAsNxV463rCPz88c=
+github.com/sam-caldwell/errors v1.0.6/go.mod h1:lZIVGM3grlaHjtZziLfGruJvF1cP+QTERP5ZavehpX0=
 github.com/sam-caldwell/exit v1.0.2 h1:9OSz8+9KE9cqQIQcex2+Egd91LGclfn4RKLr2CU7vmo=
 github.com/sam-caldwell/exit v1.0.2/go.mod h1:gy6m0KCj1RZ+KafgZVahgAxdwVm9pud/6O+lZz0NpFw=
 github.com/sam-caldwell/extensions v1.0.3 h1:qiPEf9Tc1niS3mECI9/H+DbhvkIWpUGiBuseS7KAT1o=
