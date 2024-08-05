@@ -3,7 +3,7 @@ module github.com/sam-caldwell/calculateSubnets
 go 1.22.4
 
 require (
-	github.com/sam-caldwell/ansi v1.0.0
+	github.com/sam-caldwell/ansi v1.0.1
 	github.com/sam-caldwell/arg v1.2.0
 	github.com/sam-caldwell/errors v1.0.6
 	github.com/sam-caldwell/exit v1.0.2
