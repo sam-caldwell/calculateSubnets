@@ -1,7 +1,7 @@
 github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
 github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
-github.com/sam-caldwell/ansi v1.0.2 h1:2jNRJg8I0r+HIqKMdWpqwfCftr/IuSNHyrDgQxZ23qA=
-github.com/sam-caldwell/ansi v1.0.2/go.mod h1:R553t3P2UM/FpxUF0IRWQNsfa3F7L6RYkWoOdpco8Tg=
+github.com/sam-caldwell/ansi v1.0.3 h1:Nzfn400fd6vbejbffrZfxhyINAX78jN4GT1aJtY6kTI=
+github.com/sam-caldwell/ansi v1.0.3/go.mod h1:R553t3P2UM/FpxUF0IRWQNsfa3F7L6RYkWoOdpco8Tg=
 github.com/sam-caldwell/arg v1.2.0 h1:nAlOdMUJ+qbtxk5fbuMQ7sRa5Q54aRlHEO1CbkXm8G0=
 github.com/sam-caldwell/arg v1.2.0/go.mod h1:i/nKpj4jlSU8g5gzALg/FJO54OGj2CADClTD1Blv1kA=
 github.com/sam-caldwell/errors v1.0.7 h1:jWw9ZLTaHxKWNYyPZpTuBA2WCAZ9OrLVp3VOQVmLb+I=
